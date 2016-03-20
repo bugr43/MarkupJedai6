@@ -1,5 +1,0 @@
-<templateSet group="PHP">
-  <template name="forech" value="&lt;? foreach($data as $key =&gt; $value): ?&gt;&#10;&lt;? endforeach; ?&gt;" toReformat="false" toShortenFQNames="true">
-    <context />
-  </template>
-</templateSet>
