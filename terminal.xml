@@ -1,9 +1,0 @@
-<application>
-  <component name="TerminalOptionsProvider">
-    <option name="myShellPath" value="C:\Windows\System32\cmd.exe" />
-    <option name="myCloseSessionOnLogout" value="false" />
-    <option name="myReportMouse" value="false" />
-    <option name="mySoundBell" value="false" />
-    <option name="myOverrideIdeShortcuts" value="false" />
-  </component>
-</application>
