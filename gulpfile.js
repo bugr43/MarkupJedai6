@@ -5,7 +5,9 @@ var gulp         = require('gulp'),
 		rename       = require('gulp-rename'),
 		browserSync  = require('browser-sync').create(),
 		concat       = require('gulp-concat'),
-		uglify       = require('gulp-uglifyjs');
+		uglify       = require('gulp-uglifyjs'),
+		nodeBurbonPath = require('node-bourbon').includePaths;
+console.log(nodeBurbonPath);
 
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
 		browserSync.init({
@@ -17,9 +19,9 @@ gulp.task('browser-sync', ['styles', 'scripts'], function() {
 });
 
 gulp.task('styles', function () {
-	return gulp.src('sass/*.sass')
+	return gulp.src('./sass/*.sass')
 	.pipe(sass({
-		includePaths: require('node-bourbon').includePaths
+		includePaths: nodeBurbonPath
 	}).on('error', sass.logError))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
