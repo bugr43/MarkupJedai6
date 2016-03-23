@@ -2,9 +2,10 @@
 @import "vars.sass"
 
 body
-  font-size: 16px
-  min-width: 320px
   position: relative
+  min-width: 320px
+  background-color: $main-color
+  font-size: 16px
   line-height: 1.5
   font-family: "RobotoRegular", sans-serif
   overflow-x: hidden
@@ -32,9 +33,17 @@ h6,
   font-weight: normal
   text-transform: uppercase
 
+
+.text-left
+  text-align: left
+
+.text-right
+  text-align: right
+
 .top-line
   background-color: $main-color
   text-align: center
+  border-bottom: lighten($main-color, 6%) solid 1px
   a
     color: #fff
   ul, li
@@ -50,10 +59,10 @@ h6,
     background-color: $main-color
     a
       border-bottom: lighten($main-color, 5%) 1px solid
-      border-left: lighten($main-color, 5%) 1px solid
+      border-left: transparent 1px solid
       border-top: none
     >li
-      border-bottom: lighten($main-color, 5%) 1px solid
+      //border-bottom: lighten($main-color, 5%) 1px solid
       background-color: transparent
       >a
         color: #fff
@@ -77,3 +86,118 @@ h6,
           a
             padding: 10px 20px
             color: #fff
+
+
+// Top panel
+
+.top-panel
+  background-color: rgba(lighten($main-color, 2%), .8)
+  color: #fff
+  padding: 50px 0
+  position: relative
+  &-content
+    position: relative
+    z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-image: url(../img/top-panel-bg.jpg)
+    opacity: .16
+  &-box
+    h4
+      font-family: "RobotoCondensedRegular", sans-serif
+      font-size: em(15px)
+      margin-top: 0
+      position: relative
+      &::after
+        content: ''
+        position: absolute
+        left: 0
+        bottom: -9px
+        height: 1px
+        width: 100%
+        background-color: $accent-color
+        opacity: .4
+    ul,
+    li
+      margin: 0
+      padding: 0
+      list-style-type: none
+    li
+      position: relative
+      display: inline-block
+      max-width: 48%
+      opacity: .35
+      font-size: em(13px)
+      padding: 0 10px 0 22px
+      &:only-child
+        max-width: 100%
+      .fa
+        position: absolute
+        top: 6px
+        left: 0
+        font-size: 16px
+
+
+
+.logo
+  position: relative
+  top: 3px
+  img
+    max-width: 100%
+
+.top-phone
+  margin-top: -3px
+  font-family: "RobotoCondensedRegular", sans-serif
+  font-size: em(20px)
+  span
+    font-size: em(12px)
+    opacity: .3
+
+.top-email
+  font-size: em(14px)
+  a
+    color: #fff
+    text-decoration: underline
+  span
+    opacity: .3
+
+.top-email,
+.top-phone
+  .fa
+    margin-right: 3px
+
+.button
+  position: relative
+  color: #111
+  background-color: $accent-color
+  border-radius: 2px
+  font-size: em(16px)
+  padding: 6px 22px
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    overflow: hidden
+    height: 3px
+    background-color: darken($accent-color, 10%)
+    width: 100%
+    border-bottom-right-radius: 2px
+    border-bottom-left-radius: 2px
+  &:hover,
+  &:focus
+    text-decoration: none
+    color: #222
+
+  &-small
+    font-size: em(14px)
+    &::after
+      height: 2px
+
+.top-button
+  margin-top: 22px
