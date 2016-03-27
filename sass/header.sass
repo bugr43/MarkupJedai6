@@ -1,10 +1,11 @@
 @import "bourbon"
 @import "vars.sass"
+@import "app/libs/owl.carousel/dist/assets/owl.carousel.min"
+
 
 body
   position: relative
   min-width: 320px
-  background-color: $main-color
   font-size: 16px
   line-height: 1.5
   font-family: "RobotoRegular", sans-serif
@@ -41,6 +42,8 @@ h6,
   text-align: right
 
 .top-line
+  position: relative
+  z-index: 2
   background-color: $main-color
   text-align: center
   border-bottom: lighten($main-color, 6%) solid 1px
@@ -95,6 +98,8 @@ h6,
   color: #fff
   padding: 50px 0
   position: relative
+  z-index: 1
+  box-shadow: rgba(#fff, .03) 0 10px 0 0
   &-content
     position: relative
     z-index: 1
@@ -177,7 +182,13 @@ h6,
   background-color: $accent-color
   border-radius: 2px
   font-size: em(16px)
-  padding: 6px 22px
+  padding: 10px 30px
+  transition: background-color .25s ease
+  &:hover
+    background-color: lighten($accent-color, 12%)
+  &:active
+    background-color: darken($accent-color, 10%)
+
   &::after
     content: ''
     position: absolute
@@ -196,8 +207,113 @@ h6,
 
   &-small
     font-size: em(14px)
+    padding: 6px 22px
     &::after
       height: 2px
 
 .top-button
   margin-top: 22px
+
+.slider-wrap
+  .owl-dots
+    position: absolute
+    bottom: 50px
+    width: 100%
+    text-align: center
+    .owl-dot
+      display: inline-block
+      margin: 0 3px
+      width: 14px
+      height: 14px
+      background-color: darken($main-color, 10%)
+      border-radius: 7px
+      cursor: pointer
+      transition: background-color .25s ease
+      &.active
+        background-color: $accent-color
+  .slider-nav-container
+    position: relative
+  .slider-nav
+    position: absolute
+    width: 100%
+    z-index: 2
+    color: #fff
+    font-size: em(36px)
+    div
+      top: 180px
+      cursor: pointer
+      position: absolute
+      &:last-child
+        right: 0
+
+.slider
+  position: absolute
+  top: 0
+  width: 100%
+  .slide-wrap
+    float: left
+    &.active
+      h2
+        opacity: 1
+        left: 0
+      p
+        opacity: .75
+        left: 0
+      .slide-img-wrap
+        opacity: 1
+        transform: scale(1)
+
+  .slide
+    padding-top: 280px
+    padding-bottom: 110px
+    position: relative
+    color: #fff
+    h2
+      font-family: "RobotoCondensedLight", sans-serif
+      font-size: em(48px)
+      margin-top: 0
+      margin-bottom: 20px
+      line-height: em(19px)
+      position: relative
+      left: 100px
+      opacity: 0
+      transition: all 1s ease
+      &:first-line
+        color: $accent-color
+    p
+      font-family: "RobotoLight", sans-serif
+      //opacity: .75
+      margin-bottom: 40px
+      position: relative
+      left: 50px
+      opacity: 0
+      transition: all 1.5s ease
+      transition-delay: .15s
+    &-bg
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background-size: cover
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: $main-color
+        opacity: .85
+    &-content
+      position: relative
+      z-index: 1
+      padding-top: 80px
+
+.slide-img-wrap
+  max-width: 100%
+  padding-top: 12px
+  opacity: 0
+  transform: scale(.8)
+  transition: all 1s ease
+  transition-delay: .25s

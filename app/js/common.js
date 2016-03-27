@@ -6,6 +6,22 @@ $(function() {
         delay: 300
     });
 
+	var owl = $(".slider");
+	owl.owlCarousel({
+		loop: true,
+		items: 1,
+		itemClass: "slide-wrap",
+		nav: true,
+		navText: ""
+	});
+
+	$(".next").click(function(){
+		owl.trigger("next.owl.carousel");
+	});
+	$(".prev").click(function(){
+		owl.trigger("prev.owl.carousel");
+	});
+
 	//SVG Fallback
 	if(!Modernizr.svg) {
 		$("img[src*='svg']").attr("src", function() {
