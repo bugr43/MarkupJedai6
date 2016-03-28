@@ -49,6 +49,7 @@ $(function() {
 	});
 
 	$(".service-item h4").equalHeights();
+	$(".new-item-text").equalHeights();
 
 	//SVG Fallback
 	if(!Modernizr.svg) {

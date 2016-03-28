@@ -100,5 +100,80 @@ body textarea:required:valid
       color: $accent-color
       font-size: 18px
 
+.sect-universal
+  position: relative
+  background-color: #efefef
+  padding: 60px 0
+  background-size: cover
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: .85
+  h2
+    margin-bottom: 45px
+    font-size: em(40px)
+    line-height: em(18px)
+
+.sect-news
+  background-image: url(../img/news-bg.jpg)
+  color: #fff
+  &::before
+    background-color: $main-color
+
+.new-item
+  margin: 20px 0
+  padding: 1px 1px 32px 1px
+  background-color: #efefef
+  text-align: center
+  color: #111
+  &-text
+    margin-bottom: 25px
+  .new-item-img
+    &:hover
+      &::before
+        opacity: .7
+      .fa
+        opacity: .4
+  &-img
+    display: block
+    min-height: 180px
+    background-size: cover
+    position: relative
+    cursor: pointer
+    .fa
+      position: absolute
+      top: 50%
+      left: 50%
+      font-size: 30px
+      color: #fff
+      margin-top: -10px
+      margin-left: -10px
+      opacity: 0
+      transition: all .5s ease
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: $main-color
+      opacity: 0
+      transition: all .5s ease
+  h4,
+  p
+    padding: 0 20px
+  p
+    font-size: em(14px)
+    margin-top: 0
+    margin-bottom: 36px
+  h4
+    margin-bottom: 12px
+
+
 //ALWAYS END
 @import "media"
