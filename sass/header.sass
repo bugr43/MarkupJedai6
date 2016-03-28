@@ -376,3 +376,38 @@ h6,
 
     &.on span:after
       transform: rotate(-45deg) translate(6px, -7px)
+
+.sect-teaser
+  padding: 28px 0 10px
+  background-color: $main-color
+  color: #fff
+
+.teaser
+  &-item
+    display: table-row
+    >div
+      padding-bottom: 18px
+  &-count
+    display: table-cell
+    vertical-align: middle
+    &-wrap
+      position: relative
+      width: 43px
+      height: 43px
+    .fa::before
+      font-size: 48px
+      color: lighten($main-color, 10%)
+    .teaser-number
+      position: absolute
+      top: 8px
+      width: 100%
+      font-family: "RobotoCondensedBold", sans-serif
+      font-size: 22px
+      text-align: center
+      color: $accent-color
+  &-text
+    vertical-align: middle
+    font-family: "RobotoCondensedLight", sans-serif
+    line-height: 20px
+    padding-left: 15px
+    opacity: .28

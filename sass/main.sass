@@ -30,6 +30,75 @@ body textarea:required:valid
   &.mm-offcanvas
     z-index: 4
 
+.sect-services
+  background-color: #efefef
+  .col-md-3
+    padding: 0
+
+.service-item
+  padding-bottom: 32px
+  border: 5px lighten($main-color, 6%) solid
+  background-color: #fff
+  text-align: center
+  transition: all .5s ease
+  &:hover
+    border-color: $accent-color
+    box-shadow: rgba(0,0,0, .35) 0 0 32px
+    transform: scale(1.05)
+    z-index: 2
+    .service-item-image
+      .fa
+        opacity: .4
+      &::before
+        opacity: .7
+    .service-item-stars
+      color: $accent-color
+      .fa
+        margin: 0 3px
+  h4
+    font-size: em(18px)
+    margin-bottom: 10px
+  &-image
+    position: relative
+    min-height: 190px
+    background-size: cover
+    cursor: pointer
+    .fa
+      position: absolute
+      top: 50%
+      left: 50%
+      font-size: 30px
+      color: #fff
+      margin-top: -10px
+      margin-left: -10px
+      opacity: 0
+      transition: all .5s ease
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: $main-color
+      opacity: 0
+      transition: all .5s ease
+  &-stars
+    font-size: 11px
+    color: #b4b4b4
+    .fa
+      margin-left: 1px
+      transition: all .5s ease
+  &-price
+    margin-top: 5px
+    margin-bottom: 26px
+    font-family: "RobotoBold", sans-serif
+    font-size: em(17px)
+    span
+      font-size: em(28px)
+    .fa
+      color: $accent-color
+      font-size: 18px
 
 //ALWAYS END
 @import "media"
