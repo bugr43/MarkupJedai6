@@ -1631,7 +1631,7 @@
                                 <span><i class="fa fa-envelope"></i> E-Mail:</span> <a href="mailto:emailsender@gmail.com">emailsender@gmail.com</a>
                             </div>
                             <div class="top-button">
-                                <a href="#" class="button button-small">заказать звонок</a>
+                                <a href="#callback" class="button button-small popup-with-move-anim" data-form="Верхняя форма">заказать звонок</a>
                             </div>
                         </div>
                     </div>
@@ -2092,7 +2092,7 @@
                         <span><i class="fa fa-envelope"></i> E-Mail:</span> <a href="mailto:emailsender@gmail.com">emailsender@gmail.com</a>
                     </div>
                     <div class="top-button">
-                        <a href="#" class="button button-small">заказать звонок</a>
+                        <a href="#callback" class="button button-small popup-with-move-anim" data-form="Нижняя форма">заказать звонок</a>
                     </div>
                 </div>
                 <div class="developer text-right hidden-xs">
@@ -2141,7 +2141,27 @@
         </div>
     </div>
 </footer>
-<div class="hidden"></div>
+<div class="hidden">
+    <form class="popup-form callback zoom-anim-dialog" id="callback">
+        <div class="success">Спасибо за заявку! <br> Наши менеджеры свяжутся с вами в ближайшее время.</div>
+        <input type="hidden" name="project_name" value="Юрдис">
+        <input type="hidden" name="admin_email" value="nikolayostrizhny@gmail.com">
+        <input type="hidden" name="form_subject" value="Новая заявка с сайта Юрдис">
+        <h3>Заказать звонок</h3>
+        <label>
+            <span>Ваше имя: </span>
+            <input type="text" name="Имя" placeholder="Введите ваше имя...">
+        </label>
+        <label>
+            <span>Ваш телефон: </span>
+            <input type="text" name="Телефон" placeholder="Введите ваш телефон..." required>
+        </label>
+        <div class="text-center">
+            <button class="button" type="submit">Отправить</button>
+        </div>
+        <input class="formname" type="hidden" name="Форма">
+    </form>
+</div>
 
 <!--[if lt IE 9]>
 <script src="libs/html5shiv/es5-shim.min.js"></script>

@@ -1,5 +1,12 @@
 @import "bourbon"
 @import "vars.sass"
+//Load Libs SASS
+@import "app/libs/animate/animate.sass"
+@import "app/libs/superfish/dist/css/superfish"
+@import "app/libs/font-awesome/scss/font-awesome"
+@import "app/libs/jQuery.mmenu/dist/css/jquery.mmenu.all"
+@import "app/libs/magnific-popup/dist/magnific-popup"
+@import "app/css/magnific-custom"
 
 *::-webkit-input-placeholder
 	color: #666
@@ -265,6 +272,45 @@ body textarea:required:valid
       text-decoration: none
     img, span
       display: block
+
+
+.popup-form
+  position: relative
+  .success
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: #fff
+    z-index: 2
+    font-family: "RobotoCondensedBold", sans-serif
+    padding: 30px
+    text-transform: uppercase
+    text-align: center
+    display: none
+    align-items: center
+    &.visible
+      display: flex
+  h3
+    text-align: center
+  label,
+  input
+    display: block
+    width: 100%
+  label
+    margin-bottom: 12px
+    span
+      font-size: em(15px)
+      color: #999
+  input
+    border: $accent-color 4px solid
+    padding: 6px 17px
+  .button
+    margin:
+      top: 20px
+      bottom: 10px
+
 
 //ALWAYS END
 @import "media"

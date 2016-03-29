@@ -1,5 +1,25 @@
 $(function() {
 
+	$('.popup-with-move-anim').magnificPopup({
+		type: 'inline',
+
+		fixedContentPos: false,
+		fixedBgPos: true,
+
+		overflowY: 'auto',
+
+		closeBtnInside: true,
+		preloader: false,
+
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-slide-bottom'
+	});
+
+	$('a[href=#callback]').click(function(){
+		$('#callback .formname').val($(this).data('form'));
+	});
+
 	$(".top-line .sf-menu").superfish({
         cssArrows: false,
         hoverClass: 'newerUsedClass',
@@ -52,6 +72,8 @@ $(function() {
 	$(".new-item-text").equalHeights();
 	$(".link-item").equalHeights();
 
+
+
 	//SVG Fallback
 	if(!Modernizr.svg) {
 		$("img[src*='svg']").attr("src", function() {
@@ -61,18 +83,19 @@ $(function() {
 
 	//E-mail Ajax Send
 	//Documentation & Example: https://github.com/agragregra/uniMail
-	$("form").submit(function() { //Change
+	$(".callback").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
 			type: "POST",
 			url: "mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
-			alert("Thank you!");
+			$('.success').addClass('visible');
 			setTimeout(function() {
-				// Done Functions
+				$('.success').removeClass('visible');
+				$.magnificPopup.close();
 				th.trigger("reset");
-			}, 1000);
+			}, 3000);
 		});
 		return false;
 	});
